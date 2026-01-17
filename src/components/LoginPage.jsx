@@ -25,8 +25,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-6 relative overflow-hidden">
-      {/* Background Decorative Elements */}
+    <div className="min-h-screen bg-white flex items-center justify-center lg:p-18 p-8 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-50 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-50 rounded-full blur-[120px]"></div>
@@ -38,7 +37,6 @@ const LoginPage = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-[450px] bg-white/80 backdrop-blur-xl border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-[2.5rem] p-10 md:p-12"
       >
-        {/* Back to Home */}
         <Link
           href={"/"}
           className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-indigo-600 transition-colors mb-8 group"
@@ -47,7 +45,6 @@ const LoginPage = () => {
           Back to Home
         </Link>
 
-        {/* Header */}
         <div className="mb-10">
           <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-200 mb-6">
             <MdLogin className="text-white text-2xl" />
@@ -60,7 +57,6 @@ const LoginPage = () => {
           </p>
         </div>
 
-        {/* Form UI */}
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
             <label className="text-sm font-bold text-gray-700 ml-1">
@@ -117,8 +113,6 @@ const LoginPage = () => {
             </motion.button>
           </div>
         </form>
-
-        {/* Social Login Mockup */}
 
         <p className="text-center mt-10 text-gray-500 font-medium">
           New here?{" "}

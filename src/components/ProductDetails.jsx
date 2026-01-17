@@ -152,7 +152,7 @@ const ProductDetails = ({ product }) => {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full bg-indigo-600 hover:bg-indigo-500 transition font-black py-6 rounded-[2rem] text-xl flex items-center justify-center gap-3 shadow-xl shadow-indigo-600/20"
+              className="cursor-pointer w-full bg-indigo-600 hover:bg-indigo-500 transition font-black py-6 rounded-[2rem] text-xl flex items-center justify-center gap-3 shadow-xl shadow-indigo-600/20"
             >
               <MdAddShoppingCart size={24} />
               Add to Cart
