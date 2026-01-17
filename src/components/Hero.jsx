@@ -55,16 +55,13 @@ const Hero = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="relative w-full h-full">
-              {/* Background Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-[5000ms] scale-110"
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
-                {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-black/50"></div>
               </div>
 
-              {/* Hero Content */}
               <div className="relative h-full flex items-center justify-center text-center px-4">
                 <div className="max-w-4xl">
                   <h1 className="text-4xl md:text-7xl font-black text-white mb-6 drop-shadow-lg leading-tight animate-slide-up">
