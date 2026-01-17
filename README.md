@@ -6,7 +6,7 @@ ProductNest is a modern **product listing & inventory management web application
 
 ## 🚀 Live Demo
 
-> _(Add your deployed Vercel link here)_
+> _([Add your deployed Vercel link here](https://product-nest-gules.vercel.app/))_
 
 ---
 
