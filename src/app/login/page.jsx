@@ -1,11 +1,17 @@
 import LoginPage from "@/components/LoginPage";
-import React from "react";
+import React, { Suspense } from "react";
+
+const LoginSkeleton = () => (
+  <div className="h-screen flex items-center justify-center">
+    <div className="w-[400px] h-[500px] bg-gray-100 rounded-3xl animate-pulse" />
+  </div>
+);
 
 const Login = () => {
   return (
-    <div>
+    <Suspense fallback={<LoginSkeleton />}>
       <LoginPage />
-    </div>
+    </Suspense>
   );
 };
 
