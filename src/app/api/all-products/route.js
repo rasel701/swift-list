@@ -1,4 +1,5 @@
 import { connect } from "@/app/lib/dbConnect";
+import { revalidatePath } from "next/cache";
 const allProducts = connect("all-products");
 
 export async function GET() {
@@ -17,6 +18,7 @@ export async function POST(req) {
   }
   const newProduct = { message, date: new Date().toISOString() };
   const result = await allProducts.insertOne(newProduct);
+  revalidatePath("/all-products");
 
   return Response.json(result);
 }

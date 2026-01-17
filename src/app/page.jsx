@@ -1,5 +1,6 @@
 import AboutSection from "@/components/AboutSection";
 import Hero from "@/components/Hero";
+import LatestProduct from "@/components/LatestProduct";
 import React from "react";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Hero />
       <AboutSection />
+      <LatestProduct />
     </div>
   );
 };

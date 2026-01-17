@@ -11,16 +11,47 @@ import {
   MdCloudUpload,
   MdAutoAwesome,
 } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const AddProductPage = () => {
+  const handleAddProduct = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const productName = form.productName.value;
+    const price = form.price.value;
+    const category = form.category.value;
+    const description = form.description.value;
+    const image = form.image.value;
+    const newProduct = {
+      name: productName,
+      price: parseFloat(price),
+      category,
+      description,
+      image,
+    };
+    const res = await fetch("http://localhost:3000/api/all-products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    });
+    const data = await res.json();
+    console.log(data);
+    if (data.acknowledged) {
+      toast.success("Product added successfully!");
+      form.reset();
+    } else {
+      toast.error("Failed to add product.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#05070A] text-white py-20 px-4 relative overflow-hidden">
-      {/* Dynamic Background Glows */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-900/20 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-900/20 rounded-full blur-[120px] -z-10"></div>
 
       <div className="max-w-3xl mx-auto relative">
-        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,19 +71,15 @@ const AddProductPage = () => {
           </p>
         </motion.div>
 
-        {/* Main Form Card - Glassmorphism Effect */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
           className="bg-[#0A0D14]/60 backdrop-blur-2xl rounded-[2.5rem] shadow-2xl border border-white/5 p-8 md:p-12 relative"
         >
-          {/* Subtle internal glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent rounded-[2.5rem] pointer-events-none"></div>
 
-          <form className="space-y-8 relative z-10">
-            {/* Row 1: ID & Name */}
-
+          <form onSubmit={handleAddProduct} className="space-y-8 relative z-10">
             <div className="space-y-3">
               <label className="text-xs font-black text-gray-400 uppercase tracking-widest flex items-center gap-2 ml-1">
                 <MdOutlineInventory className="text-indigo-400 text-lg" />{" "}
@@ -60,12 +87,12 @@ const AddProductPage = () => {
               </label>
               <input
                 type="text"
+                name="productName"
                 placeholder="Name of Item"
                 className="w-full bg-white/5 border border-white/10 py-4 px-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:bg-white/10 transition-all text-white placeholder:text-gray-600 font-medium"
               />
             </div>
 
-            {/* Row 2: Price & Category */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <label className="text-xs font-black text-gray-400 uppercase tracking-widest flex items-center gap-2 ml-1">
@@ -75,6 +102,7 @@ const AddProductPage = () => {
                 <input
                   type="number"
                   placeholder="0.00"
+                  name="price"
                   className="w-full bg-white/5 border border-white/10 py-4 px-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:bg-white/10 transition-all text-white placeholder:text-gray-600 font-medium"
                 />
               </div>
@@ -84,7 +112,10 @@ const AddProductPage = () => {
                   Category
                 </label>
                 <div className="relative">
-                  <select className="w-full bg-white/5 border border-white/10 py-4 px-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:bg-white/10 transition-all text-white font-medium appearance-none cursor-pointer">
+                  <select
+                    name="category"
+                    className="w-full bg-white/5 border border-white/10 py-4 px-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:bg-white/10 transition-all text-white font-medium appearance-none cursor-pointer"
+                  >
                     <option className="bg-[#0A0D14]" value="">
                       Select Category
                     </option>
@@ -97,6 +128,9 @@ const AddProductPage = () => {
                     <option className="bg-[#0A0D14]" value="home">
                       Home Decor
                     </option>
+                    <option className="bg-[#0A0D14]" value="Gadgets">
+                      Gadgets
+                    </option>
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                     ▼
@@ -105,20 +139,19 @@ const AddProductPage = () => {
               </div>
             </div>
 
-            {/* Row 3: Description */}
             <div className="space-y-3">
               <label className="text-xs font-black text-gray-400 uppercase tracking-widest flex items-center gap-2 ml-1">
                 <MdOutlineDescription className="text-indigo-400 text-lg" />{" "}
-                Product Intelligence
+                Product Description
               </label>
               <textarea
                 rows="4"
+                name="description"
                 placeholder="Technical specifications and features..."
                 className="w-full bg-white/5 border border-white/10 py-4 px-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:bg-white/10 transition-all text-white placeholder:text-gray-600 font-medium resize-none"
               ></textarea>
             </div>
 
-            {/* Row 4: Image Upload UI */}
             <div className="space-y-3">
               <label className="text-xs font-black text-gray-400 uppercase tracking-widest flex items-center gap-2 ml-1">
                 <MdOutlineAddPhotoAlternate className="text-indigo-400 text-lg" />{" "}
@@ -126,6 +159,7 @@ const AddProductPage = () => {
               </label>
               <input
                 type="text"
+                name="image"
                 placeholder="image-url"
                 className="w-full bg-white/5 border border-white/10 py-4 px-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:bg-white/10 transition-all text-white placeholder:text-gray-600 font-medium"
               />
@@ -138,7 +172,7 @@ const AddProductPage = () => {
                   boxShadow: "0 0 20px rgba(79, 70, 229, 0.4)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                type="button"
+                type="submit"
                 className="flex-1 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-black py-5 rounded-2xl transition-all text-lg shadow-xl"
               >
                 Launch Product

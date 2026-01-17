@@ -5,7 +5,7 @@ const allProductsCollection = connect("all-products");
 export async function GET(request, { params }) {
   const { "product-id": id } = await params;
 
-  if (id.length != id) {
+  if (id.length != 24) {
     return Response.json({
       status: 400,
       message: "Send correct id",
