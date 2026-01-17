@@ -144,7 +144,8 @@ POST /api/all-products
 
 ## 📸 Screenshots
 
-> *(Add screenshots of Landing Page, Product List, Product Details, Login)*
+### 🏠 Landing Page
+![Landing Page](screenshots/landing.png)
 
 ---
 
