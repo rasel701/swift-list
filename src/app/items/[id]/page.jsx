@@ -3,16 +3,20 @@ import React from "react";
 
 const SingleItems = async ({ params }) => {
   const { id } = await params;
-  const res = await fetch(`http://localhost:3000/api/all-products/${id}`, {
-    cache: "no-store",
-  });
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API}/api/all-products/${id}`,
+    {
+      cache: "no-store",
+    },
+  );
 
   if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    throw new Error("Failed to fetch product");
   }
 
   const product = await res.json();
-  console.log(product);
+
   return (
     <div>
       <ProductDetails product={product} />

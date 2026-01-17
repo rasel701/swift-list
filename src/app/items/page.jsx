@@ -2,7 +2,7 @@ import ProductCard from "@/components/ProductCard";
 import React from "react";
 
 const Items = async () => {
-  const res = await fetch("http://localhost:3000/api/all-products", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/all-products`, {
     cache: "force-cache",
     next: { revalidate: 10 },
   });

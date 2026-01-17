@@ -6,7 +6,7 @@ ProductNest is a modern **product listing & inventory management web application
 
 ## 🚀 Live Demo
 
-> *(Add your deployed Vercel link here)*
+> _(Add your deployed Vercel link here)_
 
 ---
 
@@ -14,33 +14,33 @@ ProductNest is a modern **product listing & inventory management web application
 
 ### 🌐 Public Features
 
-* Modern landing page with smooth animations
-* Browse all products without login
-* Product details page with premium UI
-* Latest products section
-* Testimonials, FAQ & CTA sections
+- Modern landing page with smooth animations
+- Browse all products without login
+- Product details page with premium UI
+- Latest products section
+- Testimonials, FAQ & CTA sections
 
 ### 🔐 Authentication (Mock Login)
 
-* Login using a mock admin account
-* Cookie-based authentication
-* Persistent login using cookies
-* Logout functionality
+- Login using a mock admin account
+- Cookie-based authentication
+- Persistent login using cookies
+- Logout functionality
 
 ### 🧑‍💼 Admin / Protected Features
 
-* Protected **Add Product** route
-* Only logged-in users can add products
-* Middleware-based route protection
+- Protected **Add Product** route
+- Only logged-in users can add products
+- Middleware-based route protection
 
 ### 🗄️ Backend & API
 
-* REST API using **Next.js Route Handlers**
-* MongoDB integration
-* Fetch all products
-* Fetch single product by ID
-* Add new products
-* Get latest products (sorted by date)
+- REST API using **Next.js Route Handlers**
+- MongoDB integration
+- Fetch all products
+- Fetch single product by ID
+- Add new products
+- Get latest products (sorted by date)
 
 ---
 
@@ -102,9 +102,9 @@ Password: kamal123
 
 ## 🔐 Route Protection
 
-* Cookies are used to store a mock token
-* Middleware checks authentication
-* Unauthorized users are redirected to `/login`
+- Cookies are used to store a mock token
+- Middleware checks authentication
+- Unauthorized users are redirected to `/login`
 
 ---
 
@@ -132,31 +132,32 @@ POST /api/all-products
 
 ## 🧠 Learning Outcomes
 
-* Next.js App Router fundamentals
-* Server vs Client Components
-* API Routes & MongoDB
-* Cookie-based auth handling
-* Route protection with middleware
-* Skeleton loading & UX optimization
-* Clean project structure
+- Next.js App Router fundamentals
+- Server vs Client Components
+- API Routes & MongoDB
+- Cookie-based auth handling
+- Route protection with middleware
+- Skeleton loading & UX optimization
+- Clean project structure
 
 ---
 
 ## 📸 Screenshots
 
 ### 🏠 Landing Page
+
 ![Landing Page](https://github.com/rasel701/swift-list/blob/main/productNest.png)
 
 ---
 
 ## 🧪 Future Improvements
 
-* Real authentication (JWT / NextAuth)
-* Role-based access control
-* Admin dashboard
-* Product update & delete
-* Pagination & search
-* Image upload support
+- Real authentication (JWT / NextAuth)
+- Role-based access control
+- Admin dashboard
+- Product update & delete
+- Pagination & search
+- Image upload support
 
 ---
 
@@ -178,8 +179,8 @@ This project is for educational purposes only.
 **Rasel**
 Frontend Developer (React & Next.js)
 
-* GitHub: [https://github.com/your-github](https://github.com/your-github)
-* Portfolio: [https://your-portfolio.com](https://your-portfolio.com)
+- GitHub: [https://github.com/your-github](https://github.com/your-github)
+- Portfolio: [https://your-portfolio.com](https://your-portfolio.com)
 
 ---
 

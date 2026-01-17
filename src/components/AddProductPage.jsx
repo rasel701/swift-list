@@ -29,7 +29,7 @@ const AddProductPage = () => {
       description,
       image,
     };
-    const res = await fetch("http://localhost:3000/api/all-products", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/all-products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
