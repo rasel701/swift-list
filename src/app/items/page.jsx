@@ -1,9 +1,11 @@
 import ProductCard from "@/components/ProductCard";
 import React from "react";
 
+export const dynamic = "force-dynamic";
+
 const Items = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/all-products`, {
-    cache: "force-cache",
+    // cache: "force-cache",
     next: { revalidate: 10 },
   });
 
