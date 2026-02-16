@@ -179,7 +179,7 @@ This project is for educational purposes only.
 **Rasel**
 Frontend Developer (React & Next.js)
 
-- GitHub: [https://github.com/your-github](https://github.com/rasel701)
+- GitHub: [https://github.com/rasel701/swift-list]
 
 
 ---
